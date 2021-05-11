@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_image_tvshows"
+        android:layout_width="150dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        android:src="@drawable/loadimg"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/poster" />
+
+    <TextView
+        android:id="@+id/tv_tvshows"
+        style="@style/Movie"
+        android:textSize="@dimen/sixteen_sp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="8sp"/>
+
+</LinearLayout>
