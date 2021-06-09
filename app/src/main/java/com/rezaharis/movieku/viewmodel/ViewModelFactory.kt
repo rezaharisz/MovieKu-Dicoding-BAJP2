@@ -11,8 +11,6 @@ import com.rezaharis.movieku.viewmodel.tvshows.TvShowsViewModel
 
 class ViewModelFactory(private val movieKuRepository: MovieKuRepository): ViewModelProvider.NewInstanceFactory() {
 
-    private var id: Int = 0
-
     companion object{
         @Volatile
         private var instance: ViewModelFactory? = null
@@ -21,16 +19,6 @@ class ViewModelFactory(private val movieKuRepository: MovieKuRepository): ViewMo
                 instance?: synchronized(this){
                     instance?: ViewModelFactory(Injection.getRepositories())
                 }
-
-        fun getInstance(id: Int): ViewModelFactory =
-                instance?: synchronized(this){
-                    instance?: ViewModelFactory(Injection.getRepositories(), id)
-                }
-    }
-
-    private constructor(movieKuRepository: MovieKuRepository, id: Int):
-            this(movieKuRepository){
-        this.id = id
     }
 
     @Suppress("UNCHECKED_CAST")
